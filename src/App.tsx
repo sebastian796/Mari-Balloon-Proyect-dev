@@ -1,9 +1,24 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+import { MainLayout } from "@/layouts/index.ts";
 
+import { Home, Nosotros, Galeria, Contacto, Servicios, Login } from "@/pages";
+
+const App = () => {
   return (
-    <h1>Proyecto de React</h1>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/galeria" element={<Galeria />} />
+          <Route path="/contacto" element={<Contacto />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;

@@ -1,0 +1,37 @@
+.inicio{
+    width: 100%;
+    height: auto;
+    background-image:$img-fondo-home;
+    @include ajustar-img-content;
+    div{
+        width: 50%;
+        height: 100%;
+        padding: 10%;
+        display:flex;
+        flex-direction: column;
+        row-gap:1rem;
+        align-items: center;
+        h1{
+            font-size:$font-size-titulo + 1;
+            font-family:$type-principal;
+            font-weight: 900;
+            line-height: 1;
+            color:$color-text-principal;
+        }
+        p{
+            @include text-principal;
+        }
+        button{
+            color:$color-text-principal;
+            font-size:$font-size-btn -0.5;
+            font-family:$type-subTitulo;
+            font-weight: 700;
+            border-radius:50px;
+            border: $color-border solid 1px;
+            &:hover{
+                background-color: $color-btn-precionar-fondo;   
+                color:$color-btn-precionar-letra;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@use './variables' as *;
+@use './typography' as *;
+
+//Ancho completo
+@mixin ancho-completo {
+  width: 100%;
+  height: 100%;
+}
+
+// Centrar los elementos en el medio
+@mixin centrar-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+// Ajustar imagen en el contenedor
+@mixin ajustar-img-content {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin text-principal {
+  font-size: $font-size-principal + 0.3;
+  font-family: $type-principal;
+  font-weight: 900;
+  color: $color-text-principal;
+}
