@@ -9,7 +9,7 @@ export interface ButtonProps
 
 const Button: React.FC<ButtonProps> = ({ label,styleClass, ...rest }) => {
   return (
-    <button className={`${styles.button} ` + styleClass } {...rest}>
+    <button className={`rounded-[50px] ${styles.button} ` + styleClass } {...rest}>
       {label}
     </button>
   );

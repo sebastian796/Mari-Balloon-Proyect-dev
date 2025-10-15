@@ -3,12 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav>
-      <div className="logo">
+    <nav className="w-full h-[70px] flex flex-row justify-between items-center pl-8">
+      <div className="logo rounded-full flex items-center pl-4">
         <Link to="/">Mari_Balloon</Link>
       </div>
-      <ul>
-        <li>
+      
+      <ul className="h-full w-[60%] grid grid-cols-5 ">
+        <li> 
           <NavLink
             className={({ isActive }) =>
               isActive ? "navLink active" : "navLink"

@@ -1,8 +1,12 @@
-.button{
-    background-color: $color-principal;
-    padding: 5px 10px;
-    color:white;
-    border: 1px solid black;
-    border-radius:10px;
-    cursor:pointer;
+.button {
+  background-color: $color-principal;
+  cursor: pointer;
+  color: $color-text-principal;
+  font-size: $font-size-btn;
+  font-family: $type-subTitulo;
+  font-weight: 700;
+  &:hover {
+    background-color: $color-btn-precionar-fondo;
+    color: $color-btn-precionar-letra;
+  }
 }

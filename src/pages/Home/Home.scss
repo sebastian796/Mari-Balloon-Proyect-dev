@@ -1,37 +1,95 @@
-.inicio{
-    width: 100%;
-    height: auto;
-    background-image:$img-fondo-home;
-    @include ajustar-img-content;
-    div{
-        width: 50%;
-        height: 100%;
-        padding: 10%;
-        display:flex;
-        flex-direction: column;
-        row-gap:1rem;
-        align-items: center;
-        h1{
-            font-size:$font-size-titulo + 1;
-            font-family:$type-principal;
-            font-weight: 900;
-            line-height: 1;
-            color:$color-text-principal;
-        }
-        p{
-            @include text-principal;
-        }
-        button{
-            color:$color-text-principal;
-            font-size:$font-size-btn -0.5;
-            font-family:$type-subTitulo;
-            font-weight: 700;
-            border-radius:50px;
-            border: $color-border solid 1px;
-            &:hover{
-                background-color: $color-btn-precionar-fondo;   
-                color:$color-btn-precionar-letra;
-            }
-        }
+.inicio {
+  width: 100%;
+  height: auto;
+  background-image: $img-fondo-home;
+  @include bg-cover;
+  div {
+    width: 50%;
+    height: 100%;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    h1 {
+      font-size: $font-size-titulo + 1;
+      font-family: $type-principal;
+      font-weight: 900;
+      line-height: 1;
+      color: $color-text-principal;
     }
+    p {
+      @include text-main;
+    }
+    Button {
+      width: 12rem;
+      padding: 10px 25px;
+    }
+  }
+}
+
+// Pequena introduccion
+.introduccion {
+  background: $color-fondo;
+}
+.content-intro {
+  h2 {
+    font-size: $font-size-titulo;
+    font-family: $type-encabezado;
+    font-weight: 500;
+    color: $color-text-secundario;
+    font-weight: 600;
+  }
+  p {
+    @include text-main;
+    font-size: $font-size-principal;
+  }
+  button {
+    display: block;
+    padding: 10px 25px;
+  }
+}
+
+// Culidades de la empresa
+
+.cualidades {
+  background-color: $color-fondo;
+  .content-cualid {
+    @include shadow(rgb(96, 96, 175), 0px, 4px);
+  }
+  .content-cualid:nth-child(2) {
+    flex-direction: row-reverse;
+    margin-left: auto;
+  }
+}
+
+// Parte de servicios, dos partes, una es la info, y otra los servicios
+.servicios {
+  background-color: $color-segundario;
+}
+.content-servicio-text {
+  background-color: $color-fondo-segundario;
+  h3 {
+    font-size: calc($font-size-titulo - 0.2rem);
+    font-family: $type-encabezado;
+    color: $color-text-terciario;
+    font-weight: 700;
+    line-height: 45px;
+  }
+  p {
+    color: $color-text-secundario;
+    font-size: $font-size-principal;
+  }
+  button {
+    padding: 0.5rem 0.2rem;
+  }
+}
+
+// imagen con video en el medio
+
+.content-img {
+  @include bg-cover;
+  .content-video {
+    background-color: black;
+  }
 }
