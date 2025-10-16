@@ -1,0 +1,13 @@
+.content-img-servicios {
+  background-color:$color-fondo-cuarto;
+    box-shadow: $color-terciario 3px 2px 10px;
+  min-height: 20rem;
+  h2 {
+    font-size: $fotn-size-subtitulo;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 500;
+    color: $color-text-principal;
+    font-style: italic;
+  }
+  
+}

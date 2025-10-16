@@ -1,0 +1,20 @@
+.galeria{
+    background: $img-fondo-galeria-02;
+    background-repeat: no-repeat;
+    background-color: $color-fondo-terciario;
+    background-position: bottom;
+    background-size:100%;
+    h2{
+        font-size:$font-size-seccion +2rem;
+        font-weight: 500;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color:$color-text-principal;
+    }
+    p{
+        font-size:$font-size-principal;
+        font-family: Verdana, Geneva, Tahoma, sans-serif  ;
+        font-weight: 300;
+        color:$color-text-principal;
+        text-shadow: black 1px 1px 20px;
+    }
+}

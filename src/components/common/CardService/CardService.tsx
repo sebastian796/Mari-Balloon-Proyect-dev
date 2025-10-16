@@ -26,7 +26,7 @@ const CardService: React.FunctionComponent<ICardServiceProps> = ({
       <h3>{subTitulo}</h3>
       <Imagen url={img} ancho={anchoImg} alto={altoImg} />
       <p>{parrafo}</p>
-      <Enlace to={to} label={label} />
+      <Enlace to={to} label={label}/>
     </div>
   );
 };

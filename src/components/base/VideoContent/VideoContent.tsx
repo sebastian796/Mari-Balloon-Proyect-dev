@@ -7,12 +7,15 @@ interface IVideocContentProps {
   largo?: string;
 }
 
+
 const VideocContent: React.FunctionComponent<IVideocContentProps> = ({
   ref,
   ancho = '100%',
   largo = '100%',
 }) => {
+  
   return <video src={ref} style={{ width: ancho, height: largo }}></video>;
 };
 
 export default VideocContent;
+

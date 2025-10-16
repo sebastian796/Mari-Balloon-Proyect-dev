@@ -7,7 +7,7 @@ interface IMainLayout{}
 
 const MainLayout:React.FunctionComponent<IMainLayout> = () => {
   return (
-    <div>
+    <div className='content-navBar'>
         <NavBar />
         <main>
             <Outlet/>

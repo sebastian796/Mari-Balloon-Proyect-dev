@@ -7,3 +7,5 @@ export {default as CardService} from './CardService/CardService';
 
 // Tarjeta para las cualidades de la empresa
 export {default as CardCualidad} from './CardCualidad/CardCualidad';
+
+export {default as ContentServicios} from './ImagenesServicios/ContentServicios';

@@ -8,5 +8,6 @@ import gata from "./img-personajes/gata.png";
 
 // Fondo imagenes de facebook
 import homeFondoShow from "./img-face/fondo-show-01.png";
+import nosotrosFondoShow from './img-face/fondo-show-02.png';
 
-export { pliSaludo, conejo, gata, oso, homeFondoShow };
+export { pliSaludo, conejo, gata, oso, homeFondoShow,nosotrosFondoShow };

@@ -6,7 +6,7 @@ import { Home, Nosotros, Galeria, Contacto, Servicios, Login } from "@/pages";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />

@@ -2,48 +2,46 @@
 $color-principal: #daecff; // color utilizado en fondo, navbar
 $color-segundario: #7b9fa7; //color celeste un poquito oscuro
 $color-terciario: #734e11; //marron para bordes o letras
-$color-cuarto:#eeffdb; //similar al blanco
+$color-cuarto: #eeffdb; //similar al blanco
 $color-quinto: #d0bda4; // color similar al gris/
 
 $color-fondo: #c4e0fe; // fondo mas tenuo y atractivo, ademas de profesional
 $color-fondo-segundario: #fef7b4f6; // segundo color de fondo
+$color-fondo-terciario: #cbc6e3;
+$color-fondo-cuarto: #f1ddea;
 
 $color-icon: #eeffdb;
-$color-icon-02:#ade4b5;
-$color-icon-03:#fff18c;
-$color-icon-04:#d0eaa3;
-
+$color-icon-02: #ade4b5;
+$color-icon-03: #fff18c;
+$color-icon-04: #d0eaa3;
 
 // Coelores para componentes
-$color-oro: #e6be4b; 
+$color-oro: #e6be4b;
 $color-tarjeta-fondo: #f3ffd2;
-$color-tarjeta-letra:#2d2e2c;
-$color-tarjeta-aux:#ccccbb;
-$color-tarjeta-extra:#f7dece;
-$color-tarjeta-border:#eed7c5;
+$color-tarjeta-letra: #2d2e2c;
+$color-tarjeta-aux: #ccccbb;
+$color-tarjeta-extra: #f7dece;
+$color-tarjeta-border: #eed7c5;
 
 // Colores para el enlace
-$color-enlace-letra:  #8ba6ac;
+$color-enlace-letra: #8ba6ac;
 $color-enlace-letra-apretar: #f8f8ec;
-
-
 
 $color-neutro: #f4f4dd;
 
 // Colores para el btn preterminado
-$color-btn-fondo:#f2f2f2;
-$color-btn-letra:#1c5052;
+$color-btn-fondo: #f2f2f2;
+$color-btn-letra: #1c5052;
 $color-btn-precionar-fondo: #bdcdd0;
 $color-btn-precionar-letra: #44749d;
-$color-btn-border:#3a415a;
+$color-btn-border: #3a415a;
 
 //Colores de texto
 $color-text-principal: #34344e;
 $color-text-secundario: #3a415a;
 $color-text-terciario: #566981;
 $color-text-cuarto: #89a7b1;
-$color-text-quinto:#cbdad5;
-
+$color-text-quinto: #cbdad5;
 
 //Tamano de fuentes
 $font-size-titulo: 3rem;
@@ -58,5 +56,7 @@ $font-size-btn: 1.2rem;
 // url a img dentro del proyecto
 
 $img-fondo-home: url("../../img/fondo-inicio-plipli.png");
-$img-intro-plin: url("../../img/img-personajes/plipli.png");
+$img-fondo-nosotros: url("../../img/img-face/fondo-show-02.png");
+$img-fondo-galeria: url("../../img/img-fondo/galeria-fondo.png");
+$img-fondo-galeria-02: url("../../img/img-fondo/fondo-galeria-02.png");
 // img personajes cualidades
