@@ -1,14 +1,12 @@
 import "./CardCualidad.scss";
 import * as React from "react";
-import { Imagen } from "@/components/base";
 
 interface ICardCualidadProps {
   styleExtra: string;
   titulo: string;
   parrafo: string;
   url: string;
-  largoImagen?: string;
-  anchoImagen?: string;
+  alt?: string;
 }
 
 const CardCualidad: React.FunctionComponent<ICardCualidadProps> = ({
@@ -16,13 +14,16 @@ const CardCualidad: React.FunctionComponent<ICardCualidadProps> = ({
   titulo,
   parrafo,
   url,
-  largoImagen = "200px",
-  anchoImagen = "200px",
+  alt = "img cualidad",
 }) => {
   return (
-    <div className="content-cualid w-[70%] h-[30%] p-[5%] flex justify-around flex-row ">
-      <Imagen url={url} alto={largoImagen} ancho={anchoImagen} />
-      <div className={styleExtra + 'w-3/5 h-4/5'}>
+    <div className="content-cualid w-full h-[20rem] flex justify-around flex-row ">
+      <div className="cualidad-img w-[35%] h-full flex justify-center items-center">
+        <img className="w-[50%] " src={url} alt={alt} />
+      </div>
+      <div
+        className={"cualidad-infor " + styleExtra + "w-[65%] h-full p-[3%7%]"}
+      >
         <h4>{titulo}</h4>
         <p>{parrafo}</p>
       </div>

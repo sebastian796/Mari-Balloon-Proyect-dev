@@ -3,6 +3,7 @@
   height: auto;
   background-image: $img-fondo-home;
   @include bg-cover;
+
   div {
     width: 50%;
     height: 100%;
@@ -30,7 +31,7 @@
 
 // Pequena introduccion
 .introduccion {
-  background: $color-fondo;
+  background: $color-segundario;
 }
 .content-intro {
   h2 {
@@ -54,8 +55,8 @@
 
 .cualidades {
   background-color: $color-fondo;
+  box-shadow: 0 0 20px $color-principal;
   .content-cualid {
-    @include shadow(rgb(96, 96, 175), 0px, 4px);
   }
   .content-cualid:nth-child(2) {
     flex-direction: row-reverse;

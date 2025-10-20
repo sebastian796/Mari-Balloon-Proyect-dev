@@ -1,36 +1,40 @@
-nav {
+header {
   background-color: $color-principal;
+  display:flex;
+  flex-direction: row;
   .logo {
     background-color: $color-icon;
-    color: $color-terciario;;
+    color: $color-terciario;
     font-family: $type-subTitulo;
     font-weight: 700;
     box-shadow: $color-neutro 10px 0 20px 5px;
   }
+}
 
-  ul {
-    li {
-      @include full-size;
-      color: $color-enlace-letra;
-      font-family: $type-subTitulo;
-      font-weight: 700;
-      font-size: $font-size-btn;
-      transform: scale(0.9);
+ul {
+
+  li {
+    @include full-size;
+    color: $color-enlace-letra;
+    font-family: $type-subTitulo;
+    font-weight: 700;
+    font-size: $font-size-btn;
+    transform: scale(0.9);
+  }
+
+  .navLink {
+    @include full-size;
+    color: $color-text-principal;
+    display: block;
+    text-align: center;
+    align-content: center;
+    &:hover {
+      color: $color-text-secundario;
+      text-shadow: white 5px 3px 10px;
     }
-    .navLink {
-      @include full-size;
-      color:$color-text-principal;
-      display: block;
-      text-align: center;
-      align-content: center;
-      &:hover{
-        color:$color-text-secundario;
-        text-shadow: white 5px 3px 10px;
-        }
-      &.active{
-        background-color:$color-cuarto;
-        
-      }
+    &.active {
+      background-color: $color-cuarto;
     }
   }
+
 }

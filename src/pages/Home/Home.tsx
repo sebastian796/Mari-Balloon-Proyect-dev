@@ -1,13 +1,13 @@
 import "./Home.scss";
-import { Button, VideoContent, Imagen } from "@/components/base";
+import { Button, VideoContent } from "@/components/base";
 import { CardService, CardCualidad } from "@/components/common";
 import {
   conejo,
   gata,
   oso,
-  pliSaludo,
   homeFondoShow,
 } from "@/assets/img/personajes";
+import {nino,torta,estrellas,flores,fiesta,globo} from '@/assets/icon/index'
 console.log(homeFondoShow);
 interface IHomeProps {}
 
@@ -30,8 +30,8 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
         </div>
       </section>
 
-      <section className="flex flex-row justify-evenly p-[4%] introduccion items-center">
-        <div className="content-intro w-[70%] h-full m-[1rem] p-[5%] flex flex-col items-start gap-x-[1rem] ">
+      <section className=" w-full flex justify-center p-[4%] introduccion items-center">
+        <div className="content-intro w-[70%] h-full m-[1rem] flex flex-col items-center gap-y-[1rem] text-center px-[7%] ">
           <h2>¿Que nos Caracterizan?</h2>
           <p>
             En Mari Baloon, transformamos tus ideas en experiencias
@@ -39,12 +39,11 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
             eventos, te garantizamos que cada detalle será perfecto, desde el
             primer contacto hasta el último aplauso.
           </p>
-          <Button label="Solicitar Evento" />
+          <Button  label="Solicitar Evento" />
         </div>
-        <Imagen url={pliSaludo} alto="60%" ancho="25%" />
       </section>
 
-      <section className="cualidades w-full flex flex-col gap-y-[3.5rem] p-[3rem] relative">
+      <section className="cualidades w-full flex flex-col relative">
         <CardCualidad
           titulo="Tranquilidad Garantizada"
           parrafo="Nos encargamos de todos los detalles, desde la logística hasta la seguridad. Somos un equipo profesional, asegurando que tu única preocupación sea disfrutar con tus hijos."
@@ -70,9 +69,9 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
       </section>
 
       <section className="servicios grid grid-cols-[30%70%] p-[5%]">
-        <div className="content-servicio-text w-auto h-[60%] rounded-[60px] p-[10%] mr-[5%] flex flex-col gap-[1.5rem]  ">
-          <h3>Nuestros Servicios</h3>
-          <p>
+        <div className="content-servicio-text w-auto h-[60%] rounded-[60px] p-[10%] mr-[5%] flex flex-col justify-around items-center text-start ">
+          <h3 className="w-full">Nuestros Servicios</h3>
+          <p className="w-full">
             Ilusionismo interactivo y profesional que cautivará a toda la
             familia. Nuestro mago combina trucos asombrosos con comedia y
             participación del público. Risas y asombro garantizados.
@@ -84,51 +83,51 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
         <div className="grid grid-cols-3 grid-rows-2 ">
           <CardService
             subTitulo="Show Infantil Temático"
-            img="imagen "
+            img={torta}
             to="/servicios"
             label="Ir al servicio"
             anchoImg="200px"
             altoImg="200px"
           />
           <CardService
-            subTitulo="Nombre del Servicio"
-            img="imagen aluciba"
+            subTitulo="Baby Shower Emotivo"
+            img={nino}
             to="/servicios"
             label="Ir al servicio"
             anchoImg="200px"
             altoImg="200px"
           />
           <CardService
-            subTitulo="Nombre del Servicio"
-            img="imagen aluciba"
+            subTitulo="Hora Loca Explosiva"
+            img={fiesta}
             to="/servicios"
             label="Ir al servicio"
-            anchoImg="100px"
-            altoImg="100px"
+            anchoImg="200px"
+            altoImg="200px"
           />
           <CardService
-            subTitulo="Nombre del Servicio"
-            img="imagen aluciba"
+            subTitulo="Decoraciones Personalizadas"
+            img={globo}
             to="/servicios"
             label="Ir al servicio"
-            anchoImg="100px"
-            altoImg="100px"
+            anchoImg="200px"
+            altoImg="200px"
           />
           <CardService
-            subTitulo="Nombre del Servicio"
-            img="imagen aluciba"
+            subTitulo='Servicio "El Patron'
+            img={flores}
             to="/servicios"
             label="Ir al servicio"
-            anchoImg="100px"
-            altoImg="100px"
+            anchoImg="200px"
+            altoImg="200px"
           />
           <CardService
-            subTitulo="Nombre del Servicio"
-            img="imagen aluciba"
+            subTitulo="¿Buscas Algo Más?"
+            img={estrellas}
             to="/servicios"
             label="Ir al servicio"
-            anchoImg="100px"
-            altoImg="100px"
+            anchoImg="200px"
+            altoImg="200px"
           />
         </div>
       </section>

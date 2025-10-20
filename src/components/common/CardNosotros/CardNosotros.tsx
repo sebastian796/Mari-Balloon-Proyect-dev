@@ -1,18 +1,19 @@
 import * as React from "react";
 import './CardNosotros.scss'
-import { Imagen } from "@/components/base";
 import { nosotrosFondoShow } from "@/assets/img/personajes";
 nosotrosFondoShow;
 interface ICardNosotrosProps {
   label: string;
   text: string;
   girar?: boolean;
+  url?:string;
 }
 
 const CardNosotros: React.FunctionComponent<ICardNosotrosProps> = ({
   label,
   text,
   girar = false,
+  url,
 }) => {
   return (
     <div className={`cardServicio w-full h-full flex flex-row justify-center p-[4%5%] ${girar ? "flex-row-reverse" : ""}`}>
@@ -20,7 +21,7 @@ const CardNosotros: React.FunctionComponent<ICardNosotrosProps> = ({
         <h2 className="">{label}</h2>
         <p className="">{text}</p>
       </div>
-      <Imagen url="./" ancho="20%" alto="100%%" />
+      <img src={url} alt={"imagen para eventos"} width={'200rem'} className="rounded-[20px]" />
     </div>
   );
 };

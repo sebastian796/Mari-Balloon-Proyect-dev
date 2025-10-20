@@ -9,3 +9,5 @@ export {default as CardService} from './CardService/CardService';
 export {default as CardCualidad} from './CardCualidad/CardCualidad';
 
 export {default as ContentServicios} from './ImagenesServicios/ContentServicios';
+
+export {default as CardBox} from './CardBox/CardBox';

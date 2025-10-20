@@ -1,18 +1,20 @@
 .content-cualid {
   background-color: $color-tarjeta-fondo;
-  border-radius: 50px;
-  div {
+  .cualidad-img{
+    background:linear-gradient(0deg,$color-segundario,$color-principal);
+  }
+  .cualidad-infor {
+
     h4 {
       font-size: 2rem;
       color: $color-text-principal;
       font-family: $type-encabezado;
-      height: 20%;
+
     }
     p {
       font-size: 1.5rem;
       color: $color-text-principal;
       font-family: $type-principal;
-      height: 80%;
     }
   }
 }

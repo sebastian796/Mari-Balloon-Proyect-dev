@@ -1,5 +1,6 @@
 
 .nosotros{
+    background-color: $color-fondo-segundario;
     .nt-content-fondo{
         background-image: $img-fondo-nosotros;
         @include bg-cover;
@@ -9,12 +10,22 @@
             text-shadow:white 2px 3px 20px;
             font-weight:900;
             color:$color-text-principal;
-            background:linear-gradient(white,#6b6f6bdd ,white);
+            background:linear-gradient($color-fondo-segundario,$color-fondo-terciario);
             box-shadow:white 0px -2px 10px 10px;
+            opacity: 0.95;
 
         }
     }
-    img{
-        background-color: black;
+    .coleccion-img{
+        background: linear-gradient( 45deg,$color-quinto,$color-principal,$color-quinto);
+        border-top-left-radius: 70%;
+        border-bottom-right-radius: 70%;
+        img{
+            border-radius:15px;
+            &:hover{
+                box-shadow: $color-terciario 0 0 15px;
+            }
+        }
     }
+
 }

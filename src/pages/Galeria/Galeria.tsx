@@ -2,9 +2,11 @@ import { ContentServicios } from "@/components/common";
 import "./Galeria.scss";
 import * as React from "react";
 
+import { arrGaleriaShow,arrGaleriaBaby} from "@/assets/img/personajes";
+
 interface IGaleriaProps {}
 
-const Galeria: React.FunctionComponent<IGaleriaProps> = (props) => {
+const Galeria: React.FunctionComponent<IGaleriaProps> = () => {
   return (
     <div className="galeria w-full p-[5%15%] flex flex-col items-start">
       <h2>#Galeria</h2>
@@ -21,9 +23,9 @@ const Galeria: React.FunctionComponent<IGaleriaProps> = (props) => {
       <section className="content-galeria w-full h-auto flex flex-col items-center gap-y-[5rem]">
         <ContentServicios
           label="Show Infantiles"
-          listaImagenes={["./", "./"]}
+          listaImagenes={arrGaleriaShow}
         />
-        <ContentServicios label="Baby Shower" listaImagenes={["./"]} />
+        <ContentServicios label="Baby Shower" listaImagenes={arrGaleriaBaby} />
         <ContentServicios label="Hora Loca" listaImagenes={["./"]} />
         <ContentServicios
           label="Decoracion Personalizada"

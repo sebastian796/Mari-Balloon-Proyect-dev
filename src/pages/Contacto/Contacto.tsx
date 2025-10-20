@@ -4,7 +4,7 @@ import * as React from 'react';
 interface IContactoProps {
 }
 
-const Contacto: React.FunctionComponent<IContactoProps> = (props) => {
+const Contacto: React.FunctionComponent<IContactoProps> = () => {
   return(
     <div>Contacto</div>
   ) ;

@@ -12,7 +12,7 @@ const Imagen: React.FunctionComponent<IImagenProps> = ({
   ancho = "100%",
   alto = "100%",
 }) => {
-  return url && <img style={{ width: ancho, height: alto }} src={url}></img>;
+  return url && <img style={{ width: ancho, height: alto, borderRadius:'15px'}} src={url}></img>;
 };
 
 export default Imagen;

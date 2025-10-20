@@ -1,9 +1,16 @@
 .cardServicio{
     background-color:#cdcdcd;
-    h3{
+    h2{
         font-size:$fotn-size-subtitulo;
         font-weight:500;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color:$color-text-principal;
     }
+    .content-imagenes{
+        img{
+            overflow: hidden;
+            border-radius:20px;
+        }
+    }
+    
 }
