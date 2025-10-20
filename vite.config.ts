@@ -3,8 +3,11 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 
+const REPO_NAME = "Mari-Balloon-Proyect-dev";
+
 // https://vite.dev/config/
 export default defineConfig({
+  base:`${REPO_NAME}/`,
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
