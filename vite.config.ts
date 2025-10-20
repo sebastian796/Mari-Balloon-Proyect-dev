@@ -7,7 +7,7 @@ const REPO_NAME = "Mari-Balloon-Proyect-dev";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:`${REPO_NAME}/`,
+  base:`/${REPO_NAME}/`,
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
