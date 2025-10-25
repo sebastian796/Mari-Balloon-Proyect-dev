@@ -4,11 +4,11 @@ import { MainLayout } from "@/layouts/index.ts";
 
 import { Home, Nosotros, Galeria, Contacto, Servicios, Login } from "@/pages";
 
-const REPO_NAME = '/Mari-Balloon-Proyect-dev';
+const REPO_NAME = "/Mari-Balloon-Proyect-dev";
 
 const App = () => {
   return (
-    <BrowserRouter basename={REPO_NAME} >
+    <BrowserRouter basename={REPO_NAME}>
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/galeria" element={<Galeria />} />
           <Route path="/contacto" element={<Contacto />} />
         </Route>
-        <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />    
       </Routes>
     </BrowserRouter>
   );
