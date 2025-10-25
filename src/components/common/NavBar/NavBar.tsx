@@ -9,7 +9,7 @@ const NavBar = () => {
       </div>
 
       <nav className="w-[80%] flex flex-row justify-end items-center pl-8">
-        <ul className="h-full w-[60%] grid grid-cols-5 ">
+        <ul className="h-full w-[75%] grid grid-cols-6 ">
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -58,6 +58,16 @@ const NavBar = () => {
               to="/contacto"
             >
               Contacto
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+              isActive ? "navLink active" : "navLink"
+              }
+              to="/login"  
+            >
+             Iniciar Sesión
             </NavLink>
           </li>
         </ul>
