@@ -1,114 +1,106 @@
 .login-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 70px); 
-    padding: 2rem;
-    background-color: #f8f8f8; 
+  background: $color-log-fondo;
+  .login-page-decoracion {
+    background: $color-log-fondo-02;
+    z-index: 1;
+  }
 }
 
-.login-form-box {
-    width: 100%;
-    max-width: 400px; 
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-    text-align: center;
+.visual-panel{
+  img{
+    z-index:5;
+    position: relative;
+  }
+}
 
+
+.content-form {
+  z-index: 2;
+  background: linear-gradient(160deg, #7fc8fe, #4a74ff);
+}
+
+.content-form-login-registro {
+  background: #f3f7ff;
+  box-shadow: -5px 0px 15px rgba(102, 102, 102, 0.867);
+  .form-login-box {
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(171, 183, 171, 0.867);
+    z-index:10;
     h2 {
-        margin-bottom: 25px;
-        color: #333;
-        font-size: 1.8rem;
+      font-size: 1rem;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      color: #a4a1a1;
+      margin-bottom: 1rem;
     }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px; 
-    }
+  }
 }
-
-.form-group {
-    text-align: left;
-    
+.form-login-box-entrada,.form-login-box-registro {
+  z-index: 20;
+  .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0.3rem;
+    margin-bottom: 1.2rem;
     label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 600;
-        color: #555;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 0.9rem;
     }
-
     input {
-        width: 100%;
-        padding: 10px 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 1rem;
-        transition: border-color 0.3s ease;
-
-        &:focus {
-            border-color: #ff9900; 
-            outline: none;
-        }
+      border-bottom: 2px solid #ccc;
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid #6e6d6d;
+      }
     }
-}
-
-.login-button {
-    background-color: #ff9900; 
+  }
+  .login-button {
+    background-color: $color-log-btn;
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-
-    &:hover {
-        background-color: #e68a00;
-    }
-}
-
-.status-message {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    font-weight: 500;
-    &.error {
-        color: #a81c1c;
-        background-color: #ffe0e0;
-    }
-    &.success {
-        color: #1a7a3b;
-        background-color: #e0ffe0;
-    }
+    font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  }
 }
 
 .register-link {
-    margin-top: 20px;
-    font-size: 0.95rem;
-    color: #555;
+  font-size: 0.8rem;
+  font-family: monospace;
+  margin-top: 1rem;
+  span {
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
 
-    a {
-        color: #007bff; 
-        text-decoration: none;
-        font-weight: 600;
-
-        &:hover {
-            text-decoration: underline;
-        }
+// Estilos para el registro de nuevos usuarios
+.form-login-box-registro{
+    .form-group{
+        margin-bottom: 0.5rem;
     }
 }
-.grid {
-    display: grid;
-}
 
-.grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 
-.gap-3 {
-    gap: 0.75rem; 
+.form-registro{
+    .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0.3rem;
+    padding: 0.2rem;
+    label {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 0.9rem;
+    }
+    input {
+      border-bottom: 2px solid #ccc;
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid #6e6d6d;
+      }
+    }
+  }
 }
