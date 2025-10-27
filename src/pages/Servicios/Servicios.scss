@@ -1,0 +1,108 @@
+@use "@/assets/styles/base/variables.scss";
+
+.servicios-page {
+    width: 100%;
+    padding: 5% 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    text-align: center;
+    
+    /* Fondo limpio y alegre */
+    background: linear-gradient(180deg, $color-fondo-segundario, $color-fondo-terciario);
+
+    &__titulo {
+        font-size: $font-size-titulo;
+        font-family: $type-encabezado;
+        color: $color-text-principal;
+        font-weight: 800;
+        text-shadow: 3px 3px $color-oro;
+        margin-bottom: 1rem;
+        
+        /* ESTILO MEJORADO: Fondo de Pizarra/Banner */
+        background: linear-gradient(90deg, transparent 10%, $color-quinto 50%, transparent 90%);
+        padding: 1rem 5%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    &__parrafo-intro {
+        font-size: $font-size-principal;
+        color: $color-text-secundario;
+        line-height: 1.6;
+        padding: 1.5rem 5%;
+        
+        /* ESTILO SUAVE Y ELEGANTE */
+        background: rgba($color-cuarto, 0.85); 
+        border-radius: 15px;
+        border-bottom: 4px solid $color-principal; /* Línea decorativa */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
+        
+        max-width: 65%; 
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &__span-llamada {
+        font-size: $font-size-secundario;
+        font-family: $type-principal;
+        color: $color-log-btn;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
+        /* ESTILO MEJORADO: Fondo de ticket/premio */
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        background: $color-oro; 
+        color: $color-cuarto; 
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transform: rotate(-2deg);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+    }
+
+    .content-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-rows: auto;
+        gap: 2.5rem;
+        width: 80%;
+        margin-top: 2rem;
+    }
+}
+
+/* ===================================
+   Responsive para Servicios
+   =================================== */
+
+@media screen and (max-width: 1024px) {
+    .servicios-page {
+        &__titulo {
+            font-size: calc($font-size-titulo - 0.5rem);
+            padding: 0.8rem 3%;
+        }
+
+        &__parrafo-intro {
+            padding: 1rem 5%;
+            max-width: 90%;
+            width: 100%;
+        }
+
+        &__span-llamada {
+            transform: none; /* Quitamos la inclinación en móvil */
+        }
+
+        .content-box {
+            grid-template-columns: 1fr; /* 1 columna en tablet y móvil */
+            width: 90%;
+            gap: 1.5rem;
+        }
+    }
+}

@@ -1,97 +1,283 @@
+@use "sass:color";
+
 .inicio {
   width: 100%;
   height: auto;
   background-image: $img-fondo-home;
   @include bg-cover;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 
   div {
-    width: 50%;
-    height: 100%;
-    padding: 10%;
+    width: 45%; 
+    height: auto;
+    padding: 5% 4%; 
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
-    align-items: center;
+    row-gap: 1rem; /* Reducido para hacerlo menos voluminoso */
+    align-items: flex-start;
+    
+    background: rgba($color-cuarto, 0.9); 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Sombra más sutil */
+    backdrop-filter: blur(3px); /* Blur más suave */
+    border: 1px solid rgba($color-oro, 0.5); /* Borde más discreto */
+    border-radius: 15px; 
+    margin: 5% 0 5% 6%;
+
     h1 {
-      font-size: $font-size-titulo + 1;
+      font-size: $font-size-titulo; /* Reducido a tamaño base del título */
       font-family: $type-principal;
-      font-weight: 900;
-      line-height: 1;
+      font-weight: 800; /* Menos peso */
+      line-height: 1.1;
       color: $color-text-principal;
+      text-transform: uppercase;
+      text-shadow: 2px 2px $color-segundario; /* Sombra sutil de alegría */
     }
     p {
       @include text-main;
+      color: $color-text-secundario;
+      font-size: $font-size-principal;
+      line-height: 1.6;
     }
     Button {
-      width: 12rem;
-      padding: 10px 25px;
+      width: 14rem; /* Botón de tamaño estándar */
+      padding: 12px 25px;
+      background-color: $color-log-btn;
+      color: $color-cuarto;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba($color-log-btn, 0.3);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      &:hover {
+        transform: scale(1.03);
+      }
     }
   }
 }
 
-// Pequena introduccion
 .introduccion {
-  background: $color-segundario;
+  background: linear-gradient(135deg, $color-segundario, $color-fondo-terciario); 
+  padding: 5% 0;
+  display: flex; /* Aseguramos que el contenedor sea flex para centering */
+  justify-content: center;
 }
 .content-intro {
+  width: 75%; /* Ancho de la caja */
+  padding: 0 5%;
   h2 {
     font-size: $font-size-titulo;
     font-family: $type-encabezado;
-    font-weight: 500;
-    color: $color-text-secundario;
-    font-weight: 600;
+    font-weight: 700;
+    color: $color-text-principal;
+    text-shadow: 2px 2px $color-cuarto;
+    margin-bottom: 1.5rem;
   }
   p {
     @include text-main;
     font-size: $font-size-principal;
+    color: $color-text-secundario;
+    line-height: 1.8;
   }
   button {
-    display: block;
-    padding: 10px 25px;
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: $color-oro;
+    color: $color-text-principal;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba($color-oro, 0.4);
+    margin-top: 1.5rem;
+    &:hover {
+      background-color: color.adjust($color-oro, $lightness: -10%);
+      transform: translateY(-2px);
+    }
   }
 }
 
-// Culidades de la empresa
-
 .cualidades {
   background-color: $color-fondo;
-  box-shadow: 0 0 20px $color-principal;
-  .content-cualid {
-  }
+  box-shadow: inset 0 0 30px rgba($color-principal, 0.7);
+  padding: 5% 5%; /* Añadimos padding horizontal */
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem; /* Espaciado entre las tarjetas */
+
   .content-cualid:nth-child(2) {
+    /* Aquí se define la inversión para la segunda tarjeta en escritorio */
     flex-direction: row-reverse;
     margin-left: auto;
   }
 }
 
-// Parte de servicios, dos partes, una es la info, y otra los servicios
 .servicios {
-  background-color: $color-segundario;
+  background: linear-gradient(180deg, $color-fondo, $color-fondo-cuarto); 
+  padding: 8% 5%;
+  display: grid;
+  grid-template-columns: 35% 65%; /* Ajuste la distribución principal */
+  gap: 40px; /* Espacio entre la info y el grid */
 }
 .content-servicio-text {
   background-color: $color-fondo-segundario;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba($color-terciario, 0.15);
+  border: 2px solid $color-oro; 
+  height: fit-content; /* Se ajusta a la altura del contenido */
+  position: sticky; /* Hacemos que la caja de texto se quede fija si es posible */
+  top: 20px;
+
   h3 {
     font-size: calc($font-size-titulo - 0.2rem);
     font-family: $type-encabezado;
-    color: $color-text-terciario;
-    font-weight: 700;
-    line-height: 45px;
+    color: $color-text-principal;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px $color-cuarto;
   }
   p {
     color: $color-text-secundario;
     font-size: $font-size-principal;
+    line-height: 1.7; 
+    margin-bottom: 2rem;
   }
   button {
-    padding: 0.5rem 0.2rem;
+    padding: 0.8rem 1.5rem;
+    background-color: $color-icon-02;
+    color: $color-text-principal;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    &:hover {
+      background-color: color.adjust($color-icon-02, $lightness: -10%);
+      transform: translateY(-2px);
+    }
   }
 }
 
-// imagen con video en el medio
+.grid-servicios {
+    /* El contenedor grid de los servicios individuales */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px;
+    align-content: start; /* Alinea los elementos al inicio del contenedor */
+}
 
 .content-img {
   @include bg-cover;
+  padding: 5% 0;
+  background-color: $color-fondo-terciario;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   .content-video {
-    background-color: black;
+    width: 45rem; /* Aumentamos el tamaño ligeramente */
+    height: 25rem;
+    background-color: $color-text-principal;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 }
 
+/* ===================================
+Parte Responsive
+=================================== */
+
+@media screen and (max-width: 768px) {
+  .inicio {
+    div {
+      width: 90%;
+      padding: 10%;
+      margin: 10% auto;
+      align-items: center; 
+      h1 {
+        font-size: $font-size-titulo;
+      }
+      Button {
+        width: 100%;
+      }
+    }
+  }
+
+  .introduccion {
+    padding: 10% 0;
+    .content-intro {
+      width: 90% !important;
+      padding: 5%;
+    }
+  }
+
+  .cualidades {
+    flex-direction: column !important;
+    row-gap: 1rem;
+    padding: 10% 5%;
+    
+    .content-cualid {
+      flex-direction: column !important;
+      margin: 1rem auto;
+      width: 100%; /* Aseguramos que la tarjeta ocupe el ancho completo */
+    }
+    .content-cualid:nth-child(2) {
+      flex-direction: column !important;
+      margin: 1rem auto;
+    }
+  }
+
+  .servicios {
+    display: flex;
+    flex-direction: column; 
+    padding: 10% 5%;
+
+    .content-servicio-text {
+      width: 100%;
+      margin-bottom: 2rem;
+      padding: 5%;
+      top: 0;
+      position: relative; /* Desactivar sticky en móvil */
+      h3 {
+        font-size: calc($font-size-titulo - 0.5rem);
+      }
+    }
+    .grid-servicios {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+      gap: 15px;
+    }
+  }
+
+  .content-img {
+    .content-video {
+      width: 90% !important;
+      height: 15rem !important;
+      margin: 5% auto !important;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .inicio {
+    div {
+      width: 55%;
+      h1 {
+        font-size: calc($font-size-titulo + 0.5rem);
+      }
+    }
+  }
+
+  .servicios {
+    grid-template-columns: 40% 60%;
+    gap: 25px; 
+    padding: 5% 3%;
+    
+    .content-servicio-text {
+        padding: 1.5rem;
+    }
+
+    .grid-servicios {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tableta */
+      gap: 15px;
+    }
+  }
+}

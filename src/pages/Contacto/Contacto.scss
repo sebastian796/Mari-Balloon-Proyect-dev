@@ -1,0 +1,183 @@
+@use "@/assets/styles/base/variables.scss";
+
+.contacto-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* Fondo limpio */
+    background: linear-gradient(180deg, $color-fondo-segundario 0%, $color-fondo-terciario 100%);
+
+    &__titulo {
+        font-size: $font-size-titulo;
+        font-family: $type-encabezado;
+        color: $color-log-btn;
+        text-shadow: 3px 3px $color-oro;
+        margin-bottom: 0.5rem;
+    }
+
+    &__subtitulo {
+        font-size: $font-size-principal;
+        color: $color-text-secundario;
+        margin-bottom: 3rem;
+        max-width: 700px;
+        line-height: 1.6;
+    }
+
+    .contacto-content {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr; /* Info (1) vs Formulario (1.5) */
+        gap: 40px;
+        width: 100%;
+        max-width: 1200px;
+        padding: 2rem;
+        
+        background: $color-cuarto; /* Contenedor blanco/claro */
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* --- Estilos de Columna de Información --- */
+    .contacto-info {
+        padding: 1.5rem;
+        text-align: left;
+        
+        h3 {
+            font-family: $type-encabezado;
+            font-size: $font-size-seccion;
+            color: $color-text-principal;
+            border-bottom: 2px solid $color-terciario;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-group {
+            margin-bottom: 1rem;
+            span, a, p {
+                display: block;
+                font-size: $font-size-principal;
+                color: $color-text-secundario;
+            }
+            span {
+                font-weight: 700;
+                color: $color-log-btn;
+                margin-bottom: 0.2rem;
+            }
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 1.5rem;
+            color: $color-principal;
+            font-weight: 600;
+            transition: color 0.3s;
+            &:hover {
+                color: $color-log-btn;
+            }
+        }
+    }
+
+    /* --- Estilos del Formulario --- */
+    .contacto-form-container {
+        padding: 1.5rem;
+    }
+
+    .contacto-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .form-group {
+        width: calc(50% - 10px); /* Dos columnas en el formulario */
+        display: flex;
+        flex-direction: column;
+
+        &.full-width {
+            width: 100%;
+        }
+
+        label {
+            font-size: $font-size-secundario;
+            color: $color-text-principal;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            padding: 10px 15px;
+            border: 2px solid $color-fondo-terciario;
+            border-radius: 8px;
+            font-size: $font-size-principal;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background: $color-fondo-segundario;
+
+            &:focus {
+                border-color: $color-principal;
+                box-shadow: 0 0 8px rgba($color-principal, 0.3);
+                outline: none;
+            }
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background: $color-log-btn;
+        color: $color-cuarto;
+        font-size: $font-size-seccion;
+        font-family: $type-encabezado;
+        font-weight: 700;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        box-shadow: 0 5px 15px rgba($color-log-btn, 0.4);
+
+        &:hover {
+            background: darken($color-log-btn, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba($color-log-btn, 0.6);
+        }
+    }
+}
+
+/* ===================================
+   Responsive para Contacto
+   =================================== */
+
+@media screen and (max-width: 900px) {
+    .contacto-page {
+        padding: 10% 5%;
+
+        .contacto-content {
+            /* De dos columnas a una sola columna apilada */
+            grid-template-columns: 1fr;
+            padding: 1rem;
+        }
+
+        .contacto-info {
+            text-align: center;
+            
+            .info-group span {
+                text-align: center;
+            }
+        }
+
+        .contacto-form {
+            gap: 15px;
+        }
+        
+        .form-group {
+            width: 100%; /* El formulario ocupa todo el ancho */
+        }
+    }
+}

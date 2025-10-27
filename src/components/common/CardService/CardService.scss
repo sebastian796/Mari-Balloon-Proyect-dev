@@ -1,16 +1,90 @@
-.cardServicio{
-    background-color:#cdcdcd;
-    h2{
-        font-size:$fotn-size-subtitulo;
-        font-weight:500;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        color:$color-text-principal;
+.cardServicio {
+  background-color: #cdcdcd;
+  h3 {
+    font-size: $font-size-subtitulo;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: $color-text-principal;
+  }
+  .content-imagenes {
+    img {
+      overflow: hidden;
+      border-radius: 20px;
     }
-    .content-imagenes{
-        img{
-            overflow: hidden;
-            border-radius:20px;
-        }
+  }
+}
+
+// ===================================
+// Parte Responsive de CardService
+// ===================================
+
+// Estilos para Teléfonos Móviles (hasta 768px)
+@media screen and (max-width: 768px) {
+  .cardServicio {
+    padding: 5%; // Reducimos el padding interno
+    margin: 10px 5px; // Reducimos el margen lateral para aprovechar el espacio
+
+    h3 {
+      font-size: calc($font-size-subtitulo - 0.4rem); // Reducimos el título
     }
-    
+
+    .content-imagenes {
+      img {
+        max-width: 100px !important;
+        max-height: 100px !important;
+        width: auto !important; // Añadido para mantener la proporción
+        height: auto !important; // Añadido para mantener la proporción
+      }
+    }
+  }
+}
+
+// Estilos para Tabletas (entre 769px y 1024px)
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  // Sección de Inicio (mantener...)
+  .inicio {
+    height: 30rem;
+    div {
+      width: 60%;
+      padding: 5%;
+      h1 {
+        font-size: calc($font-size-titulo + 0.5rem);
+      }
+    }
+  }
+
+  // Introducción (mantener...)
+  .introduccion {
+    .content-intro {
+      width: 80% !important;
+    }
+  }
+
+  // SERVICIOS: CORRECCIÓN DE LAYOUT EN TABLETAS
+  .servicios {
+    // 1. Damos más espacio al contenedor principal de servicios
+    grid-template-columns: 40% 60%; 
+    padding: 5% 3%;
+
+    .content-servicio-text {
+      h3 {
+        font-size: $font-size-titulo;
+      }
+    }
+
+    // 2. CAMBIO CLAVE: Cambiamos el grid de 3 columnas a 2 columnas para dar más espacio horizontal a las tarjetas
+    > div:last-child {
+      grid-template-columns: repeat(2, 1fr) !important; // ¡Cambiamos de 3 a 2 columnas!
+      grid-template-rows: auto;
+      gap: 15px; // Añadimos un pequeño espacio entre tarjetas
+    }
+  }
+
+  // Imagen con video (mantener...)
+  .content-img {
+    .content-video {
+      width: 50rem !important;
+      height: 25rem !important;
+    }
+  }
 }

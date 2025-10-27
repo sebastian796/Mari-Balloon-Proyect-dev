@@ -1,19 +1,21 @@
 import * as React from "react";
+import './CardBox.scss' // Importar el SCSS de CardBox
+
 
 interface ICardBoxProps {
-  obj:{titulo:string, descripcion:string, img:string};
+  obj:{titulo:string, descripcion:string, img:string};
 }
 
 const CardBox: React.FunctionComponent<ICardBoxProps> = ({
-  obj,
+  obj,
 }) => {
-  return (
-    <div className="w-full h-[20rem] text-start flex flex-col items-center gap-y-[1rem] bg-amber-200 p-[10%] border-[1px] border-black border-solid">
-      <h2 className="w-full" style={{fontFamily:'serif',fontSize:'2rem',lineHeight:'30px'}}>{obj.titulo}</h2>
-      <p className="w-full" style={{fontFamily:'arial',fontSize:'0.8rem'}}>{obj.descripcion}</p>
-      {obj.img && <img src={obj.img} alt={''} width={'100%'} height={'0'}/>}
-    </div>
-  );
+  return (
+    <div className="card-box">
+      <h2 className="card-box__titulo">{obj.titulo}</h2>
+      <p className="card-box__descripcion">{obj.descripcion}</p>
+      {obj.img && <img src={obj.img} alt={obj.titulo} className="card-box__img"/>}
+    </div>
+  );
 };
 
 export default CardBox;
