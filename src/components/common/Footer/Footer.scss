@@ -1,4 +1,5 @@
 @use "@/assets/styles/base/variables.scss";
+@use "sass:color";
 
 .main-footer {
     width: 100%;
@@ -41,7 +42,7 @@
             text-decoration: none;
             transition: color 0.3s;
             &:hover {
-                color: lighten($color-terciario, 10%); 
+                color: color.adjust($color-terciario, $lightness: 10%); 
                 padding-left: 5px;
             }
         }

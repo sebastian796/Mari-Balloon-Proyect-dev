@@ -1,7 +1,9 @@
+@use"sass:color";
+
 .nosotros{
     background-color: $color-fondo-segundario;
     padding-bottom: 5%;
-    overflow-x: hidden; /* <--- LA CORRECCIÓN CLAVE */
+    overflow-x: hidden; 
 
     .nt-content-fondo{
         height: 20rem;
@@ -30,7 +32,7 @@
     .nt-content-historia {
         background: radial-gradient(
             circle at center, 
-            lighten($color-fondo-terciario, 10%) 0%, 
+            color.adjust($color-fondo-terciario, $lightness: 10%) 0%, 
             $color-fondo-terciario 60%, 
             $color-fondo-segundario 100% 
         );
@@ -83,10 +85,6 @@
     }
 }
 
-
-/* ===================================
-Parte Responsive
-=================================== */
 
 @media screen and (max-width: 768px) {
     .nosotros {

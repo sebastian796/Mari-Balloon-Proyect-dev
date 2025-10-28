@@ -1,0 +1,124 @@
+
+.chatbot-container {
+    width: 100%; 
+    height: 460px; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.chatbot-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-row {
+    display: flex;
+    margin-bottom: 8px;
+
+    &.user {
+        justify-content: flex-end;
+    }
+    &.bot {
+        justify-content: flex-start;
+    }
+}
+
+.message-bubble {
+    max-width: 85%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+
+    &.user-bubble {
+        background-color: #e0f7ff; 
+        color: #333;
+        border-bottom-right-radius: 3px;
+    }
+    &.bot-bubble {
+        background-color: #f1f1f1;
+        color: #333;
+        border-bottom-left-radius: 3px;
+    }
+}
+
+.input-area {
+    display: flex;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+
+    input {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.options-area {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #eee;
+    justify-content: center;
+
+    .option-button {
+        padding: 8px 12px;
+        background-color: #28a745; 
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background-color 0.2s;
+
+        &:hover:not(:disabled) {
+            background-color: #1e7e34;
+        }
+        &:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.loading-indicator {
+    font-style: italic;
+    color: #999;
+    margin-top: 5px;
+    align-self: flex-start;
+    font-size: 0.85rem;
+}
+
+.final-message {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #1e7e34;
+    border-top: 1px solid #eee;
+}

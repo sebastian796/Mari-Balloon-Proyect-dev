@@ -1,4 +1,6 @@
 import "./Home.scss";
+import React, {useState} from 'react';
+import ChatModal from '../../components/base/Modal/ChatModal';
 import { Button, VideoContent } from "@/components/base";
 import { CardService, CardCualidad } from "@/components/common";
 import {
@@ -9,9 +11,13 @@ import {
 } from "@/assets/img/personajes";
 import {nino,torta,estrellas,flores,fiesta,globo} from '@/assets/icon/index'
 console.log(homeFondoShow);
-interface IHomeProps {}
 
-const Home: React.FunctionComponent<IHomeProps> = () => {
+
+const Home: React.FC = () => {
+  const [isChatOpen, setIsChatOpen] = useState(true);
+  const handleOpenChat = () => setIsChatOpen(true);
+  const handleCloseChat = () => setIsChatOpen(false);
+  
   return (
     <>
       <section className="inicio">
@@ -24,8 +30,7 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
           </p>
           <Button
             label={"Cotizar"}
-            onClick={() => alert("Cotizando Productos")}
-            // Eliminada clase w-40, el ancho ahora es manejado por SCSS
+            onClick={handleOpenChat}
           />
         </div>
       </section>
@@ -81,7 +86,7 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
             familia. Nuestro mago combina trucos asombrosos con comedia y
             participación del público. Risas y asombro garantizadas.
           </p>
-          <Button label="Cotizar" />
+          <Button label="Cotizar" onClick={handleOpenChat} />
         </div>
 
         {/* El SCSS manejará el grid de servicios */}
@@ -144,6 +149,11 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
           <VideoContent ref=''/>
         </div>
       </section>
+
+      <ChatModal
+        isOpen={isChatOpen}
+        onClose={handleCloseChat}
+      />
     </>
   );
 };
