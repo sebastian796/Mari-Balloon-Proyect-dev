@@ -9,6 +9,10 @@ const REPO_NAME = "Mari-Balloon-Proyect-dev";
 export default defineConfig({
   base:`/${REPO_NAME}/`,
   plugins: [react(), tailwindcss()],
+  server:{
+    port:5173,
+    host:'localhost'
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
