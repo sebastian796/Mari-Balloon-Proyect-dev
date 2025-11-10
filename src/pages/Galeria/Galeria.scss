@@ -1,20 +1,91 @@
-.galeria{
-    background: $img-fondo-galeria-02;
+@use "@/assets/styles/base/variables.scss";
+
+.galeria {
+    width: 100%;
+    /* Aseguramos que no haya desbordamiento horizontal */
+    overflow-x: hidden; 
+    
+    /* Configuración de fondo mejorada */
+    background: 
+        /* Degradado que se mezcla con el fondo base y ayuda a que el texto destaque */
+        linear-gradient(rgba($color-fondo-terciario, 0.9), rgba($color-fondo-terciario, 0.7)),
+        /* Imagen de fondo */
+        $img-fondo-galeria-02;
+        
     background-repeat: no-repeat;
     background-color: $color-fondo-terciario;
-    background-position: bottom;
-    background-size:100%;
-    h2{
-        font-size:$font-size-seccion;
-        font-weight: 500;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        color:$color-text-principal;
+    background-position: bottom center;
+    background-size: cover; /* Ajustamos a cover para mejor responsividad */
+    
+    padding: 5% 10%; /* Padding principal de la página */
+
+    /* Encabezado Principal */
+    &__titulo {
+        font-size: $font-size-titulo; /* Usamos el tamaño de título */
+        font-weight: 800;
+        font-family: $type-encabezado; /* Fuente de encabezado */
+        color: $color-log-btn; /* Color primario de acento */
+        
+        /* Efecto de marquesina (luces) */
+        text-shadow: 2px 2px $color-text-principal, 
+                     0 0 10px $color-oro, /* Brillo dorado */
+                     0 0 20px $color-oro;
+        
+        /* Línea decorativa inferior */
+        border-bottom: 5px solid $color-terciario;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
-    p{
-        font-size:$font-size-principal;
-        font-family: Verdana, Geneva, Tahoma, sans-serif  ;
-        font-weight: 300;
-        color:$color-text-principal;
-        text-shadow: black 1px 1px 20px;
+    
+    /* Párrafos Introductorios */
+    &__parrafo-intro {
+        font-size: $font-size-principal;
+        font-family: $type-principal;
+        font-weight: 400;
+        color: $color-text-principal;
+        line-height: 1.6;
+        padding-right: 15%; /* Espacio para que el texto no se extienda demasiado */
+        margin-bottom: 1.5rem;
+        
+        /* Fondo semi-transparente para asegurar legibilidad sobre la imagen */
+        background: rgba($color-cuarto, 0.85); 
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Contenedor de las secciones de galería */
+    .content-galeria {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        padding-top: 3rem;
+    }
+}
+
+/* ===================================
+   Responsive para Galeria
+   =================================== */
+
+@media screen and (max-width: 1024px) {
+    .galeria {
+        padding: 10% 5%; /* Más padding en móvil/tablet */
+        background-position: center; /* Centramos el fondo */
+        background-attachment: scroll; /* Evitamos fixed para ahorrar recursos */
+
+        &__titulo {
+            font-size: $font-size-seccion;
+        }
+
+        &__parrafo-intro {
+            padding-right: 0; /* Ocupa todo el ancho disponible */
+            padding: 0.8rem 1rem;
+        }
+
+        .content-galeria {
+            gap: 3rem;
+        }
     }
 }

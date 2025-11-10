@@ -1,0 +1,70 @@
+@use "@/assets/styles/base/variables.scss";
+
+.card-box {
+    /* Estructura de la tarjeta */
+    width: 100%;
+    min-height: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    row-gap: 1rem;
+    
+    /* Estilo de la caja de regalo/ticket */
+    background: $color-cuarto;
+    border-radius: 20px;
+    border: 3px dashed $color-oro;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 15px 35px rgba($color-terciario, 0.3);
+        z-index: 5;
+    }
+
+    &__titulo {
+        font-family: $type-encabezado;
+        font-size: $font-size-seccion;
+        line-height: 1.2;
+        color: $color-log-btn;
+        font-weight: 800;
+        text-shadow: 1px 1px $color-terciario; /* <--- CORRECCIÓN A $color-terciario */
+        margin-bottom: 0.5rem;
+    }
+
+    &__descripcion {
+        font-family: $type-principal;
+        font-size: $font-size-principal;
+        color: $color-text-secundario;
+        line-height: 1.5;
+        flex-grow: 1;
+    }
+
+    &__img {
+        width: 100%;
+        max-height: 80px;
+        object-fit: contain;
+        margin-top: 1rem;
+    }
+}
+
+
+/* Responsive para CardBox */
+@media screen and (max-width: 768px) {
+    .card-box {
+        min-height: auto;
+        padding: 1.5rem;
+        
+        &__titulo {
+            font-size: calc($font-size-seccion - 0.2rem);
+        }
+        
+        &:hover {
+            transform: none;
+        }
+    }
+}

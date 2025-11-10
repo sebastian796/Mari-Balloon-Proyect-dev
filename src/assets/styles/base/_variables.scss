@@ -4,6 +4,8 @@ $color-segundario: #7b9fa7; //color celeste un poquito oscuro
 $color-terciario: #734e11; //marron para bordes o letras
 $color-cuarto: #eeffdb; //similar al blanco
 $color-quinto: #d0bda4; // color similar al gris/
+// Variable para asegurar legibilidad en fondos oscuros (Footer, Hero)
+$color-texto-claro-alto-contraste: #FFFFFF;
 
 $color-fondo: #c4e0fe; // fondo mas tenuo y atractivo, ademas de profesional
 $color-fondo-segundario: #fef7b4f6; // segundo color de fondo
@@ -43,11 +45,17 @@ $color-text-terciario: #566981;
 $color-text-cuarto: #89a7b1;
 $color-text-quinto: #cbdad5;
 
+// Colores de Login y Register
+$color-log-fondo:#A0B3F3;
+$color-log-fondo-02:#FFA6C1;
+$color-log-btn:#4a73ff;
+
+
 //Tamano de fuentes
 $font-size-titulo: 3rem;
-$fotn-size-subtitulo: 1.5rem;
+$font-size-subtitulo: 1.5rem;
 $font-size-principal: 1.2rem;
-$font-size-secudnario: 1.5rem;
+$font-size-secundario: 1.5rem;
 $font-size-seccion: 2rem;
 
 //Font size para elementos

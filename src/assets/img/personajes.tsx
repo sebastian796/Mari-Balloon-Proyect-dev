@@ -5,6 +5,7 @@ import pliSaludo from "./img-personajes/plipli.png";
 import conejo from "./img-personajes/conejo.png";
 import oso from "./img-personajes/oso.png";
 import gata from "./img-personajes/gata.png";
+import logAnimation from './img-personajes/perroPoliciaPower.png';
 
 // Fondo imagenes de facebook
 import homeFondoShow from "./img-face/fondo-show-01.png";
@@ -102,6 +103,7 @@ export {
   conejo,
   gata,
   oso,
+  logAnimation,
   homeFondoShow,
   nosotrosFondoShow,
   faceImgOne,

@@ -1,4 +1,6 @@
 import "./Home.scss";
+import React, {useState} from 'react';
+import ChatModal from '../../components/base/Modal/ChatModal';
 import { Button, VideoContent } from "@/components/base";
 import { CardService, CardCualidad } from "@/components/common";
 import {
@@ -9,9 +11,13 @@ import {
 } from "@/assets/img/personajes";
 import {nino,torta,estrellas,flores,fiesta,globo} from '@/assets/icon/index'
 console.log(homeFondoShow);
-interface IHomeProps {}
 
-const Home: React.FunctionComponent<IHomeProps> = () => {
+
+const Home: React.FC = () => {
+  const [isChatOpen, setIsChatOpen] = useState(true);
+  const handleOpenChat = () => setIsChatOpen(true);
+  const handleCloseChat = () => setIsChatOpen(false);
+  
   return (
     <>
       <section className="inicio">
@@ -24,14 +30,15 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
           </p>
           <Button
             label={"Cotizar"}
-            onClick={() => alert("Cotizando Productos")}
-            styleClass={"w-40"}
+            onClick={handleOpenChat}
           />
         </div>
       </section>
 
-      <section className=" w-full flex justify-center p-[4%] introduccion items-center">
-        <div className="content-intro w-[70%] h-full m-[1rem] flex flex-col items-center gap-y-[1rem] text-center px-[7%] ">
+      {/* Eliminadas clases Tailwind que crean conflicto (w-full, p-[4%], items-center) */}
+      <section className="introduccion flex justify-center">
+        {/* Eliminadas clases Tailwind (w-[70%], h-full, m-[1rem], gap-y-[1rem], px-[7%]) */}
+        <div className="content-intro flex flex-col items-center text-center">
           <h2>¿Que nos Caracterizan?</h2>
           <p>
             En Mari Baloon, transformamos tus ideas en experiencias
@@ -39,10 +46,11 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
             eventos, te garantizamos que cada detalle será perfecto, desde el
             primer contacto hasta el último aplauso.
           </p>
-          <Button  label="Solicitar Evento" />
+          <Button label="Solicitar Evento" />
         </div>
       </section>
 
+      {/* El SCSS manejará la distribución de las CardCualidad */}
       <section className="cualidades w-full flex flex-col relative">
         <CardCualidad
           titulo="Tranquilidad Garantizada"
@@ -53,34 +61,36 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
         <CardCualidad
           titulo="Espectáculos Únicos"
           parrafo="Olvídate de lo de siempre. Nuestro equipo creativo diseña shows
-              originales, llenos de fantasía y diversión, capturando la
-              imaginación de niños de todas las edades."
+            originales, llenos de fantasía y diversión, capturando la
+            imaginación de niños de todas las edades."
           url={oso}
           styleExtra=""
         />
         <CardCualidad
           titulo="Experetos en Eventos"
           parrafo="Llevamos un año creando alegría. Nuestra experiencia nos permite
-              solucionar cualquier imprevisto y ofrecerte un evento de la más
-              alta calidad, sin estrés."
+            solucionar cualquier imprevisto y ofrecerte un evento de la más
+            alta calidad, sin estrés."
           url={gata}
           styleExtra=""
         />
       </section>
 
-      <section className="servicios grid grid-cols-[30%70%] p-[5%]">
-        <div className="content-servicio-text w-auto h-[60%] rounded-[60px] p-[10%] mr-[5%] flex flex-col justify-around items-center text-start ">
+      {/* Ajustada la distribución de la grilla principal para Servicios */}
+      <section className="servicios grid">
+        {/* Eliminadas clases Tailwind (w-auto, h-[60%], rounded-[60px], p-[10%], mr-[5%], justify-around, items-center) */}
+        <div className="content-servicio-text flex flex-col text-start">
           <h3 className="w-full">Nuestros Servicios</h3>
           <p className="w-full">
             Ilusionismo interactivo y profesional que cautivará a toda la
             familia. Nuestro mago combina trucos asombrosos con comedia y
-            participación del público. Risas y asombro garantizados.
+            participación del público. Risas y asombro garantizadas.
           </p>
-          <Button label="Cotizar" />
+          <Button label="Cotizar" onClick={handleOpenChat} />
         </div>
 
-        {/* Debe de ser grad para poder dividirlo en seis servicios, de los cuale solo se tendran que mostrar los disponibles, no mas de seis */}
-        <div className="grid grid-cols-3 grid-rows-2 ">
+        {/* El SCSS manejará el grid de servicios */}
+        <div className="grid grid-servicios">
           <CardService
             subTitulo="Show Infantil Temático"
             img={torta}
@@ -118,7 +128,7 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
             img={flores}
             to="/servicios"
             label="Ir al servicio"
-            anchoImg="200px"
+            anchoImg="200pxw"
             altoImg="200px"
           />
           <CardService
@@ -132,20 +142,20 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
         </div>
       </section>
       <section
-        className="content-img flex justify-center items-center  "
+        className="content-img flex justify-center items-center"
         style={{backgroundImage:`url(${homeFondoShow})`}}
       >
-        <div className="content-video w-[40rem] h-[20rem] m-[5%]">
+        <div className="content-video">
           <VideoContent ref=''/>
         </div>
       </section>
+
+      <ChatModal
+        isOpen={isChatOpen}
+        onClose={handleCloseChat}
+      />
     </>
   );
 };
-
-
-<div>
-  <p></p>
-</div>
 
 export default Home;

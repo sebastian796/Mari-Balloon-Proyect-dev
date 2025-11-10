@@ -1,13 +1,145 @@
-footer{
-    background-color: $color-principal;
+@use "@/assets/styles/base/variables.scss";
+@use "sass:color";
+
+.main-footer {
+    width: 100%;
+    /* Fondo Oscuro: Telón de Teatro/Noche */
+    background-color: $color-principal; 
+    color: $color-terciario; /* Base del footer: Color Temático (Lila/Morado) */
+    padding-top: 5%;
     
-    ul{
-        li{
-            color:black;
+    .footer-content-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr;
+        gap: 40px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
+    }
+
+    .footer-section {
+        h3 {
+            font-size: $font-size-seccion;
+            font-family: $type-encabezado;
+            /* Títulos en Dorado */
+            color: $color-oro; 
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px $color-terciario;
+        }
+
+        /* Texto General: Color Temático */
+        p, a, li {
+            font-size: $font-size-principal;
+            color: $color-terciario; /* Usamos el color Temático (Morado/Lila) */
+            line-height: 1.8;
+            text-shadow: none;
+        }
+        
+        /* Enlaces de Navegación (Dorados y Temáticos) */
+        .footer-links ul li a {
+            color: $color-oro;
+            text-decoration: none;
+            transition: color 0.3s;
+            &:hover {
+                color: color.adjust($color-terciario, $lightness: 10%); 
+                padding-left: 5px;
+            }
+        }
+        
+        /* Información de Contacto (Color Temático) */
+        .footer-contact p a {
+             color: $color-terciario;
+             text-shadow: none; 
         }
     }
-    p{
-        font-size:2rem;
-        font-family:$type-decorativo;
+
+    .footer-brand {
+        &__logo {
+            font-size: $font-size-subtitulo;
+            font-weight: 900;
+            color: $color-oro;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px $color-principal;
+        }
+        &__slogan {
+            color: $color-terciario;
+            margin-bottom: 2rem;
+        }
+        &__copyright {
+            font-size: $font-size-secundario;
+            color: rgba($color-terciario, 0.7);
+            margin-top: 1rem;
+        }
+    }
+
+    .social-icons {
+        margin-top: 1.5rem;
+        a {
+            /* Fondo: El color claro de la marca */
+            background: $color-cuarto; 
+            color: $color-principal; /* Icono oscuro sobre fondo claro */
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: $font-size-principal;
+            
+            &:hover {
+                background: $color-oro;
+                color: $color-principal;
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    /* Barra Inferior (Separación Temática) */
+    .footer-bottom-bar {
+        width: 100%;
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: 3rem;
+        background: $color-terciario; 
+
+        p {
+            font-size: $font-size-secundario;
+            /* Texto blanco (alto contraste) para contraste sobre fondo morado */
+            color: $color-texto-claro-alto-contraste; 
+            font-family: $type-principal;
+            font-weight: 600;
+            text-shadow: none;
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .main-footer {
+        padding-top: 10%;
+
+        .footer-content-wrapper {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 30px;
+            padding: 0 10%;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            li {
+                margin: 0 10px;
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
     }
 }

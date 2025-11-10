@@ -1,20 +1,112 @@
 .content-cualid {
+  /* Aseguramos que el contenido interno se disponga en fila (escritorio/tableta) */
+  display: flex; 
+  flex-direction: row; 
+  align-items: stretch; /* CLAVE: Hace que los hijos (imagen y texto) ocupen la misma altura */
+  
   background-color: $color-tarjeta-fondo;
-  .cualidad-img{
-    background:linear-gradient(0deg,$color-segundario,$color-principal);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba($color-terciario, 0.2); 
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 25px rgba($color-terciario, 0.3);
   }
+
+  .cualidad-img {
+    /* Asignamos un ancho fijo (ej. 35%) y aseguramos que ocupe toda la altura */
+    width: 35%; 
+    background: linear-gradient(135deg, $color-icon-03, $color-icon-04); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Añadimos padding para que la imagen no toque el borde */
+
+    img {
+      transition: transform 0.3s ease;
+      max-width: 90%; 
+      max-height: 90%;
+      object-fit: contain;
+    }
+  }
+
   .cualidad-infor {
+    /* El resto del ancho (65%) */
+    width: 65%; 
+    padding: 20px 30px; /* Aumentamos el padding horizontal */
+    text-align: left; /* Alineamos el texto a la izquierda para mejor lectura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centramos el texto verticalmente */
 
     h4 {
       font-size: 2rem;
       color: $color-text-principal;
       font-family: $type-encabezado;
-
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px $color-cuarto;
     }
     p {
       font-size: 1.5rem;
-      color: $color-text-principal;
+      color: $color-tarjeta-letra;
       font-family: $type-principal;
+      line-height: 1.4;
+    }
+  }
+}
+
+/* ===================================
+Parte Responsive
+=================================== */
+
+@media screen and (max-width: 768px) {
+  .content-cualid {
+    /* Apilamos verticalmente en móvil */
+    flex-direction: column !important;
+    height: auto;
+    
+    .cualidad-img {
+      width: 100%; /* Ocupa todo el ancho en móvil */
+      height: 12rem !important;
+    }
+
+    .cualidad-infor {
+      width: 100%; /* Ocupa todo el ancho en móvil */
+      padding: 5%;
+      text-align: center; /* Centramos el texto en móvil */
+      
+      h4 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .content-cualid {
+    height: 18rem; 
+
+    .cualidad-img {
+      width: 40%; /* Un poco más de espacio para la imagen en tablet */
+      padding: 1rem;
+    }
+
+    .cualidad-infor {
+      width: 60%;
+      padding: 3% 5%;
+
+      h4 {
+        font-size: 1.75rem;
+      }
+      p {
+        font-size: 1.25rem;
+      }
     }
   }
 }
