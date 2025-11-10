@@ -4,12 +4,15 @@ import { MainLayout } from "@/layouts/index.ts";
 
 import { Home, Nosotros, Galeria, Contacto, Servicios, Login } from "@/pages";
 
+
 import * as React from 'react';
 
-import AdminDashboard from "./pages/Admin/Dashboard";
+import AdminDashboard from "./pages/Admin/Dashboard"; 
+
 
 
 const REPO_NAME = '/Mari-Balloon-Proyect-dev';
+
 
 interface ProtectedRouteProps {
     element: React.ReactNode;
@@ -33,8 +36,6 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ element, allowedRoles }
 };
 
 
-
-
 const App = () => {
   return (
     <BrowserRouter basename={REPO_NAME}>
@@ -45,7 +46,7 @@ const App = () => {
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/galeria" element={<Galeria />} />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} /> 
         </Route>
         <Route 
             path="/admin/dashboard" 
@@ -56,7 +57,6 @@ const App = () => {
                 />
             } 
         />
-        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

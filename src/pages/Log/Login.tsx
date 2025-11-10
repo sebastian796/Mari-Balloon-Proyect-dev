@@ -2,7 +2,9 @@ import "./Login.scss";
 import * as React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { logAnimation } from "@/assets/img/personajes";
+import { logAnimation } from "@/assets/img/personajes"; 
+
+
 
 interface AuthResponse {
   email: string;
@@ -15,6 +17,8 @@ interface RegisterFormProps {
   onToggleView: (isLogin: boolean) => void;
 }
 
+
+
 const RegisterForm: React.FC<RegisterFormProps> = ({ onToggleView }) => {
   const [primerNombre, setPrimerNombre] = useState("");
   const [segundoNombre, setSegundoNombre] = useState("");
@@ -25,6 +29,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onToggleView }) => {
   const [password, setPassword] = useState("");
   const [confirmarContrasena, setConfirmarContrasena] = useState("");
   const [message, setMessage] = useState("");
+
 
   const API_URL = "http://localhost:8080/api/auth/register";
 
@@ -69,98 +74,63 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onToggleView }) => {
   };
 
   return (
-    <div className="form-login-box">
-      <h2>Registro de Nuevo Cliente</h2>{" "}
+    
+    <div className="form-login-box"> 
+      <h2>Registro de Nuevo Cliente</h2>
       <form className="form-login-box-registro" onSubmit={handleRegisterSubmit}>
-        {" "}
         <div className="grid grid-cols-2 gap-3">
-          {" "}
           <div className="form-group">
-            <label>Primer Nombre</label>{" "}
-            <input
-              type="text"
-              value={primerNombre}
-              onChange={(e) => setPrimerNombre(e.target.value)}
-              required
-            />{" "}
-          </div>{" "}
+            <label>Primer Nombre</label>
+            <input type="text" value={primerNombre} onChange={(e) => setPrimerNombre(e.target.value)} required />
+          </div>
           <div className="form-group">
-            <label>Segundo Nombre</label>{" "}
-            <input
-              type="text"
-              value={segundoNombre}
-              onChange={(e) => setSegundoNombre(e.target.value)}
-            />{" "}
-          </div>{" "}
-        </div>{" "}
+            <label>Segundo Nombre</label>
+            <input type="text" value={segundoNombre} onChange={(e) => setSegundoNombre(e.target.value)} />
+          </div>
+        </div>
         <div className="grid grid-cols-2 gap-3">
-          {" "}
           <div className="form-group">
-            <label>Primer Apellido</label>{" "}
-            <input
-              type="text"
-              value={primerApellido}
-              onChange={(e) => setPrimerApellido(e.target.value)}
-              required
-            />{" "}
-          </div>{" "}
+            <label>Primer Apellido</label>
+            <input type="text" value={primerApellido} onChange={(e) => setPrimerApellido(e.target.value)} required />
+          </div>
           <div className="form-group">
-            <label>Segundo Apellido</label>{" "}
-            <input
-              type="text"
-              value={segundoApellido}
-              onChange={(e) => setSegundoApellido(e.target.value)}
-            />{" "}
-          </div>{" "}
-        </div>{" "}
+            <label>Segundo Apellido</label>
+            <input type="text" value={segundoApellido} onChange={(e) => setSegundoApellido(e.target.value)} />
+          </div>
+        </div>
         <div className="form-group">
-          <label>Email</label>{" "}
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />{" "}
-        </div>{" "}
+          <label>Email</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        </div>
         <div className="form-group">
-          <label>Número de Celular</label>{" "}
-          <input
-            type="tel"
-            value={numeroCelular}
-            onChange={(e) => setNumeroCelular(e.target.value)}
-            required
-          />{" "}
-        </div>{" "}
+          <label>Número de Celular</label>
+          <input type="tel" value={numeroCelular} onChange={(e) => setNumeroCelular(e.target.value)} required />
+        </div>
         <div className="form-group">
-          <label>Contraseña</label>{" "}
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />{" "}
-        </div>{" "}
+          <label>Contraseña</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        </div>
         <div className="form-group">
-          <label>Confirmar Contraseña</label>{" "}
-          <input
-            type="password"
-            value={confirmarContrasena}
-            onChange={(e) => setConfirmarContrasena(e.target.value)}
-            required
-          />{" "}
-        </div>{" "}
+          <label>Confirmar Contraseña</label>
+          <input type="password" value={confirmarContrasena} onChange={(e) => setConfirmarContrasena(e.target.value)} required />
+        </div>
+
         <button type="submit" className="login-button">
-          Crear Cuenta{" "}
-        </button>{" "}
+          Crear Cuenta
+        </button>
       </form>
-      {message && <p className="status-message">{message}</p>}{" "}
+
+      {message && <p className="status-message">{message}</p>}
+
       <p className="register-link">
-        ¿Ya tienes cuenta?{" "}
-        <span onClick={() => onToggleView(true)}>Inicia Sesión</span>{" "}
+        ¿Ya tienes cuenta?
+        <span onClick={() => onToggleView(true)}>Inicia Sesión</span>
       </p>
     </div>
   );
 };
+
+
 
 const Login: React.FunctionComponent = () => {
   const [isLoginView, setIsLoginView] = useState(true);
@@ -170,6 +140,7 @@ const Login: React.FunctionComponent = () => {
 
   const navigate = useNavigate();
   const API_URL = "http://localhost:8080/api/auth/login";
+
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage("Procesando...");
@@ -182,6 +153,7 @@ const Login: React.FunctionComponent = () => {
 
       if (response.ok) {
         const data: AuthResponse = await response.json();
+        // Lógica de navegación es idéntica en ambas ramas
         setMessage(`¡Inicio de sesión exitoso! Rol: ${data.rol}`);
         if (data.rol === "ADMIN") {
           navigate("/admin/dashboard");
@@ -198,66 +170,67 @@ const Login: React.FunctionComponent = () => {
   };
 
   const renderLoginForm = (
-    <div className="form-login-box">
-      <h2>Iniciar Sesión Cliente</h2>{" "}
+    
+    <div className="form-login-box"> 
+      <h2>Iniciar Sesión Cliente</h2>
       <form className="form-login-box-entrada" onSubmit={handleLoginSubmit}>
-        {" "}
         <div className="form-group">
-          <label htmlFor="email">Email</label>{" "}
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-          />{" "}
-        </div>{" "}
+          />
+        </div>
         <div className="form-group">
-          <label htmlFor="password">Contraseña</label>{" "}
+          <label htmlFor="password">Contraseña</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-          />{" "}
-        </div>{" "}
+          />
+        </div>
+
         <button type="submit" className="login-button">
-          Iniciar{" "}
-        </button>{" "}
+          Entrar
+        </button>
       </form>
-      {message && <p className="status-message">{message}</p>}{" "}
+
+      {message && <p className="status-message">{message}</p>}
+
       <p className="register-link">
-        ¿Aún no tienes cuenta?{" "}
-        <span onClick={() => setIsLoginView(false)}>Regístrate aquí</span>{" "}
-      </p>{" "}
+        ¿Aún no tienes cuenta?
+        <span onClick={() => setIsLoginView(false)}>Regístrate aquí</span>
+      </p>
     </div>
   );
+
   return (
+  
     <div id="login-register-usuarios" className="login-page-container">
-      <div className="login-page-decoracion"></div>{" "}
+      <div className="login-page-decoracion"></div>
       <div className="content-form">
-        {" "}
         <div className="visual-panel">
-          {" "}
           <div className="visual-content">
-            {" "}
             <img
               src={logAnimation}
               alt="Imagen de Perrito"
               className="log-form-div-img"
-            />{" "}
-          </div>{" "}
-        </div>{" "}
+            />
+          </div>
+        </div>
         <div className="content-form-login-registro">
-          {" "}
           {isLoginView ? (
             renderLoginForm
           ) : (
             <RegisterForm onToggleView={setIsLoginView} />
-          )}{" "}
-        </div>{" "}
-      </div>{" "}
+          )}
+        </div>
+      </div>
     </div>
   );
 };
